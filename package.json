@@ -1,0 +1,38 @@
+{
+  "name": "trader-desktop-angular2",
+  "version": "1.0.0",
+  "description": "Trader desktop app in Angular2",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikasgoyalgzs/trader-desktop-angular2.git"
+  },
+  "keywords": [
+    "trader-desktop",
+    "angular2"
+  ],
+  "author": "Vikas Goyal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vikasgoyalgzs/trader-desktop-angular2/issues"
+  },
+  "homepage": "https://github.com/vikasgoyalgzs/trader-desktop-angular2#readme",
+  "devDependencies": {
+    "jspm": "^0.15.7"
+  },
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-alpha.28",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.0",
+      "zone.js": "npm:zone.js@^0.5.1"
+    },
+    "devDependencies": {
+      "traceur": "github:jmcriffey/bower-traceur@0.0.90",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.90"
+    }
+  }
+}

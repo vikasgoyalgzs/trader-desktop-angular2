@@ -1,0 +1,17 @@
+{
+  "name": "trader-desktop-angular2",
+  "version": "1.0.0",
+  "homepage": "https://github.com/vikasgoyalgzs/trader-desktop-angular2",
+  "main": "app.ts",
+  "authors": [
+    "Vikas Goyal"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
