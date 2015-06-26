@@ -1,0 +1,16 @@
+[
+  '{{repeat(50, 50)}}',
+  {
+    id: '{{index()}}',
+    creationTime: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    side: '{{random("Buy", "Sell")}}',
+    symbol: '{{random("AAPL", "ORCL")}}',
+    quantity: '{{integer(20, 4000)}}',
+    placed: '{{integer(20, 4000)}}',
+    executed: '{{integer(20, 4000)}}',
+    limitPrice: '{{integer(20, 4000)}}',
+    priority: '{{integer(1, 100)}}',
+    status: '{{random("Executed", "Placed", "New")}}',
+    trader: '{{lorem(1, "words")}}'
+  }
+]
