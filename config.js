@@ -4,9 +4,10 @@ System.config({
   "paths": {
     "*": "*.js",
     "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js",
+    "npm:*": "jspm_packages/npm/*.ts",
     "rx": "jspm_packages/npm/rx@2.5.1/dist/rx.js",
-    "process": "jspm_packages/npm/process@0.10.1.js"
+    "process": "jspm_packages/npm/process@0.10.1.js",
+    "npm:reflect-metadata@0.1.0": "jspm_packages/npm/reflect-metadata@0.1.0/reflect.ts"
   }
 });
 
