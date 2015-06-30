@@ -5,7 +5,6 @@ import {LoggedinUser} from '../loggedInUser/loggedInUser';
 import {Toolbar} from '../toolbar/toolbar';
 import {Grid} from '../grid/grid';
 
-
 @Component({
   selector: 'home'
 })
