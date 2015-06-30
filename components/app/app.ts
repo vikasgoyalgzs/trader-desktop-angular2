@@ -3,19 +3,26 @@
  */
 
 /// <reference path="../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
+/// <reference path="../../jspm_packages/npm/angular2@2.0.0-alpha.28/router.d.ts" />
 
 import {Component, View, bootstrap} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
-import {LoggedinUser} from 'components/loggedInUser/loggedinUser';
-import {Toolbar} from 'components/toolbar/toolbar';
-import {Grid} from 'components/grid/grid';
+import {Login} from 'components/login/login';
+import {Home} from 'components/home/home';
+import {httpInjectables} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/http';
+import {routerInjectables, RouteConfig, RouterOutlet, RouterLink} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/router';
 
 @Component({
     selector: 'my-app',
+  appInjector: [httpInjectables]
 })
 @View({
-    templateUrl: 'components/app/app.html',
-    directives: [LoggedinUser, Toolbar, Grid]
+  template: '<router-outlet><div><div router-link="home"></div></div></router-outlet>',
+  directives: [RouterOutlet]
 })
+@RouteConfig([
+  { path: '/Login', component: Login, as: 'login' },
+  { path: '/', component: Home, as: 'home' }
+])
 class AppComponent {
     name: string;
 
@@ -24,4 +31,4 @@ class AppComponent {
     }
 }
 
-bootstrap(AppComponent);
+bootstrap(AppComponent, [routerInjectables, httpInjectables]);

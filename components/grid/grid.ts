@@ -5,19 +5,23 @@
 
 import {Trade} from 'models/Trade';
 import {Component, View} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
-import {tradesSvc} from 'services/trades';
+import {Injector, Inject} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/di';
+import {NgFor} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/directives';
+import {Trades} from 'services/trades';
 
 @Component({
   selector: 'grid',
-  injectables:[tradesSvc]
+  appInjector: [Trades]
 })
 @View({
-  templateUrl: 'components/grid/grid.html'
+  templateUrl: 'components/grid/grid.html',
+  directives: [NgFor]
 })
 export class Grid {
   trades: Array<Trade>;
 
-  constructor () {
-    //this.trades = tradesSvc.get();
+  constructor (tradesSvc: Trades) {
+    tradesSvc.get()
+      .subscribe(trades => this.trades = trades);
   }
 }

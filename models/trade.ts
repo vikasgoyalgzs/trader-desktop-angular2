@@ -1,7 +1,6 @@
 /**
  * Created by vgoya2 on 6/26/15.
  */
-
 export interface Trade {
   id: number,
   creationTime: any,
