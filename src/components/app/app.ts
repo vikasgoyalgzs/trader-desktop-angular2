@@ -16,7 +16,7 @@ import {routerInjectables, RouteConfig, RouterOutlet, RouterLink} from '../../..
   appInjector: [httpInjectables]
 })
 @View({
-  template: '<router-outlet><div><div router-link="home"></div></div></router-outlet>',
+  templateUrl: 'src/components/app/app.html',
   directives: [RouterOutlet]
 })
 @RouteConfig([
