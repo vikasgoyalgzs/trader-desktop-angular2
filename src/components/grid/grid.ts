@@ -4,9 +4,9 @@
 /// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
 
 import {Trade} from '../../models/trade';
-import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d';
-import {Injector, Inject} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/di.d';
-import {NgFor} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/directives.d';
+import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
+import {Injector, Inject} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/di';
+import {NgFor} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/directives';
 import {Trades} from '../../services/trades';
 
 @Component({
@@ -14,7 +14,7 @@ import {Trades} from '../../services/trades';
   appInjector: [Trades]
 })
 @View({
-  templateUrl: 'components/grid/grid.html',
+  templateUrl: 'src/components/grid/grid.html',
   directives: [NgFor]
 })
 export class Grid {

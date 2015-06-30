@@ -3,13 +3,13 @@
  */
 /// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
 
-import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d';
+import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
 
 @Component({
   selector: 'loggedin-user'
 })
 @View({
-  templateUrl: 'components/loggedInUser/loggedInUser.html'
+  templateUrl: 'src/components/loggedInUser/loggedInUser.html'
 })
 export class LoggedinUser {
   userFullName: string;
