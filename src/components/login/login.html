@@ -1,8 +1,8 @@
 <form>
-  <select name="userNames" id="userNames" #userNames>
+  <select name="userNames" id="userNames" #selecteduser>
     <option value=""></option>
     <option value="0">Vikas Goyal</option>
     <option value="1">Adam Sandler</option>
   </select>
-  <button type="button" (click)="login(userNames)">Login</button>
+  <button type="button" (click)="login(selecteduser.value)">Login</button>
 </form>

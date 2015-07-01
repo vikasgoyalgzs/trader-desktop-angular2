@@ -21,7 +21,7 @@ import {routerInjectables, RouteConfig, RouterOutlet, RouterLink} from '../../..
 })
 @RouteConfig([
   { path: '/', component: Login, as: 'login' },
-  { path: '/Home', component: Home }
+  { path: '/Home/:username', component: Home }
 ])
 class AppComponent {
 }

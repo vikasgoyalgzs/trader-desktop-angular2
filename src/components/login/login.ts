@@ -14,8 +14,8 @@ export class Login {
   constructor (r: Router) {
     this.router = r;
   }
-  login (user) {
-    this.router.parent.navigate('/Home');
+  login (username) {
+    this.router.parent.navigate('/Home/' + username);
   }
 }
 
