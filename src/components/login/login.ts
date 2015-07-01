@@ -12,10 +12,10 @@ export class Login {
   router: Router;
 
   constructor (r: Router) {
-    this.router = r;
+    this.router = r.parent;
   }
   login (username) {
-    this.router.parent.navigate('/Home/' + username);
+    this.router.navigate('/Home/' + username);
   }
 }
 
