@@ -6,19 +6,19 @@
 import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
 
 @Component({
-  selector: 'loggedin-user'
+    selector: 'loggedin-user'
 })
 @View({
-  templateUrl: 'src/components/loggedInUser/loggedInUser.html'
+    templateUrl: 'src/components/loggedInUser/loggedInUser.html'
 })
 export class LoggedinUser {
-  userFullName: string;
+    userFullName:string;
 
-  constructor () {
-    this.userFullName = 'Vikas Goyal';
-  }
+    constructor() {
+        this.userFullName = 'Vikas Goyal';
+    }
 
-  signOut () {
-    this.userFullName = "Sign Out";
-  }
+    signOut() {
+        this.userFullName = "Sign Out";
+    }
 }

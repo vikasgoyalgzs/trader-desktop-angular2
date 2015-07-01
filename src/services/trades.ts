@@ -8,13 +8,14 @@ import {HttpFactory, IHttp} from '../../jspm_packages/npm/angular2@2.0.0-alpha.2
 
 @Injectable()
 export class Trades {
-  http: IHttp;
+    http:IHttp;
 
-  constructor (@Inject(HttpFactory) _http: IHttp) {
-    this.http = _http;
-  }
-  get () {
-    return this.http('trader-desktop-angular2/src/mocks/trades/trades_GET.json')
-      .map(res => res.json());
-  }
+    constructor(@Inject(HttpFactory) _http:IHttp) {
+        this.http = _http;
+    }
+
+    get() {
+        return this.http('trader-desktop-angular2/src/mocks/trades/trades_GET.json')
+            .map(res => res.json());
+    }
 }

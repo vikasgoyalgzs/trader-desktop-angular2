@@ -10,18 +10,18 @@ import {NgFor} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/directiv
 import {Trades} from '../../services/trades';
 
 @Component({
-  selector: 'grid',
-  appInjector: [Trades]
+    selector: 'grid',
+    appInjector: [Trades]
 })
 @View({
-  templateUrl: 'src/components/grid/grid.html',
-  directives: [NgFor]
+    templateUrl: 'src/components/grid/grid.html',
+    directives: [NgFor]
 })
 export class Grid {
-  trades: Array<Trade>;
+    trades:Array<Trade>;
 
-  constructor (tradesSvc: Trades) {
-    tradesSvc.get()
-      .subscribe(trades => this.trades = trades);
-  }
+    constructor(tradesSvc:Trades) {
+        tradesSvc.get()
+            .subscribe(trades => this.trades = trades);
+    }
 }
