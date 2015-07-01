@@ -2,13 +2,11 @@
 
 import {Component, View, Injector} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
 import {Router} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/router';
-
 @Component({
-  selector: 'login',
-  appInjector: [Router]
+  selector: 'login'
 })
 @View({
-  templateUrl: 'components/login/login.html'
+  templateUrl: 'src/components/login/login.html'
 })
 export class Login {
   router: Router;
@@ -17,8 +15,7 @@ export class Login {
     this.router = r;
   }
   login (user) {
-    //router.navigate('/Home/' + '0');
-    //console.log(userName);
+    this.router.parent.navigate('/Home');
   }
 }
 

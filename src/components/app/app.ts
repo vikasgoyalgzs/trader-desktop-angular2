@@ -12,23 +12,18 @@ import {httpInjectables} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.2
 import {routerInjectables, RouteConfig, RouterOutlet, RouterLink} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/router';
 
 @Component({
-    selector: 'my-app',
-  appInjector: [httpInjectables]
+  selector: 'my-app',
+  appInjector: []
 })
 @View({
   templateUrl: 'src/components/app/app.html',
   directives: [RouterOutlet]
 })
 @RouteConfig([
-  { path: '/Login', component: Login, as: 'login' },
-  { path: '/', component: Home, as: 'home' }
+  { path: '/', component: Login, as: 'login' },
+  { path: '/Home', component: Home }
 ])
 class AppComponent {
-    name: string;
-
-    constructor () {
-
-    }
 }
 
 bootstrap(AppComponent, [routerInjectables, httpInjectables]);

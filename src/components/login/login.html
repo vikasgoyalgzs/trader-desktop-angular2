@@ -1,9 +1,8 @@
-<form [control-group]="loginForm">
-  <select name="userNames" id="userNames" control="login">
+<form>
+  <select name="userNames" id="userNames" #userNames>
     <option value=""></option>
     <option value="0">Vikas Goyal</option>
     <option value="1">Adam Sandler</option>
   </select>
-  <button (update)="bla">Login</button>
-  <a link="Home">Login</a>
+  <button type="button" (click)="login(userNames)">Login</button>
 </form>

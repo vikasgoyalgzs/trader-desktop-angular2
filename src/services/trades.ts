@@ -14,7 +14,7 @@ export class Trades {
     this.http = _http;
   }
   get () {
-    return this.http('mocks/trades/trades_GET.json')
+    return this.http('trader-desktop-angular2/src/mocks/trades/trades_GET.json')
       .map(res => res.json());
   }
 }
