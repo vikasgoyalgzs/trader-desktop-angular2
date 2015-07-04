@@ -3,6 +3,10 @@ jspm_packages
 node_modules
 src/**/*.js
 src/**/*.js.map
+src/**/*.css
+src/**/*.css.map
+typings/**/*.js
+typings/**/*.js.map
 bower_components
 compiled
 dist
