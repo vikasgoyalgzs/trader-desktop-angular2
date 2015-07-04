@@ -3,7 +3,7 @@
  */
 
 /// <reference path="../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
-import {Injectable, Inject} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
+import {Injectable, Inject} from 'typings/app.exports';
 import {HttpFactory, IHttp} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/http';
 
 @Injectable()

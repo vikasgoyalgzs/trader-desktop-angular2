@@ -3,7 +3,7 @@
  */
 /// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
 
-import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
+import {Component, View} from 'typings/app.exports';
 
 @Component({
   selector: 'toolbar'
@@ -12,19 +12,15 @@ import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.2
   templateUrl: 'src/components/Toolbar/toolbar.html'
 })
 export class Toolbar {
-  constructor () {
-
-  }
-
-  trade () {
+  trade (): void {
     console.log('trade called');
   }
 
-  deleteAll () {
+  deleteAll (): void {
     console.log('deleteAllCalled');
   }
 
-  refresh () {
+  refresh (): void {
     console.log('refresh called');
   }
 }

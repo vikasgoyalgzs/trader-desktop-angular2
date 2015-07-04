@@ -3,10 +3,8 @@
  */
 /// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
 
-import {Trade} from '../../models/trade';
-import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
-import {Injector, Inject} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/di';
-import {NgFor} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/directives';
+import {Component, View, NgFor} from 'typings/app.exports';
+import {ITrade} from '../../models/trade';
 import {Trades} from '../../services/trades';
 
 @Component({
@@ -18,9 +16,9 @@ import {Trades} from '../../services/trades';
     directives: [NgFor]
 })
 export class Grid {
-    trades:Array<Trade>;
+    trades: Array<ITrade>;
 
-    constructor(tradesSvc:Trades) {
+    constructor(tradesSvc: Trades) {
         tradesSvc.get()
             .subscribe(trades => this.trades = trades);
     }

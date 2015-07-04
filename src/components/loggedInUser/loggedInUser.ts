@@ -3,7 +3,7 @@
  */
 /// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
 
-import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
+import {Component, View, Router} from 'typings/app.exports';
 
 @Component({
     selector: 'loggedin-user',
@@ -13,13 +13,13 @@ import {Component, View} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.2
     templateUrl: 'src/components/loggedInUser/loggedInUser.html'
 })
 export class LoggedinUser {
-    userFullName:string;
+    router: Router;
 
-    constructor() {
-        this.userFullName = 'Vikas Goyal';
+    constructor(r: Router) {
+        this.router = r.parent;
     }
 
-    signOut() {
-        this.userFullName = "Sign Out";
+    signOut(): void {
+        this.router.navigate('/');
     }
 }

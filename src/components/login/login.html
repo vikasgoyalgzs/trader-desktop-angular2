@@ -1,8 +1,10 @@
-<form>
-  <select name="userNames" id="userNames" #selecteduser>
-    <option value=""></option>
-    <option value="0">Vikas Goyal</option>
-    <option value="1">Adam Sandler</option>
-  </select>
-  <button type="button" (click)="login(selecteduser.value)">Login</button>
-</form>
+<div class="login-component">
+    <h3>Log In</h3>
+    <select name="userNames" id="userNames" #selecteduser>
+        <option value=""></option>
+        <option value="0">Vikas Goyal</option>
+        <option value="1">Adam Sandler</option>
+    </select>
+    <button type="button" (click)="login(selecteduser.value)">Login</button>
+</div>
+

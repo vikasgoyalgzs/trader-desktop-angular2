@@ -1,0 +1,15 @@
+.home-component {
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+
+    :after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
