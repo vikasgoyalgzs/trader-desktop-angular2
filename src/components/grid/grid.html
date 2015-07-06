@@ -12,18 +12,17 @@
     <td>Status</td>
     <td>Trader</td>
   </th>
-  <tr *ng-for="#trade of trades">
-    <td>{{trade.id}}</td>
-    <td>{{trade.creationTime}}</td>
-    <td>{{trade.creationTime}}</td>
-    <td>{{trade.side}}</td>
-    <td>{{trade.symbol}}</td>
-    <td>{{trade.quantity}}</td>
-    <td>{{trade.placed}}</td>
-    <td>{{trade.executed}}</td>
-    <td>{{trade.limitPrice}}</td>
-    <td>{{trade.priority}}</td>
-    <td>{{trade.status}}</td>
-    <td>{{trade.trader}}</td>
+  <tr *ng-for="#order of orders">
+    <td>{{order.id}}</td>
+    <td>{{order.creationTime}}</td>
+    <td>{{order.side}}</td>
+    <td>{{order.symbol}}</td>
+    <td>{{order.quantity}}</td>
+    <td>{{order.placed}}</td>
+    <td>{{order.executed}}</td>
+    <td>{{order.limitPrice}}</td>
+    <td>{{order.priority}}</td>
+    <td>{{order.status}}</td>
+    <td>{{order.trader}}</td>
   </tr>
 </table>

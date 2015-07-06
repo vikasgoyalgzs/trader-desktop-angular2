@@ -19,10 +19,6 @@ export class Home {
     loggedInUser: IUser;
 
     constructor(routeParams: RouteParams) {
-        let userid = routeParams.params.username;
-        this.loggedInUser = {
-            id: 'VG',
-            name: 'Vikas Goyal'
-        };
+        this.loggedInUser = routeParams.params.username;
     }
 }

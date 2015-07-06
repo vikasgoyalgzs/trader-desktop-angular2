@@ -4,22 +4,22 @@
 /// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
 
 import {Component, View, NgFor} from 'typings/app.exports';
-import {ITrade} from '../../models/trade';
-import {Trades} from '../../services/trades';
+import {IOrder} from '../../models/order';
+import {Orders} from '../../services/orders';
 
 @Component({
     selector: 'grid',
-    appInjector: [Trades]
+    appInjector: [Orders]
 })
 @View({
     templateUrl: 'src/components/grid/grid.html',
     directives: [NgFor]
 })
 export class Grid {
-    trades: Array<ITrade>;
+    orders: Array<IOrder>;
 
-    constructor(tradesSvc: Trades) {
-        tradesSvc.get()
-            .subscribe(trades => this.trades = trades);
+    constructor(ordersSvc: Orders) {
+        ordersSvc.get()
+            .subscribe(orders => this.orders = orders);
     }
 }

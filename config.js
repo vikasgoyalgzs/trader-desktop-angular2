@@ -1,5 +1,5 @@
 System.config({
-    "baseURL": "/trader-desktop-angular2/",
+    "baseURL": "/",
     "transpiler": "traceur",
     "paths": {
         "*": "*.js",

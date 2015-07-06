@@ -2,8 +2,7 @@
     <h3>Log In</h3>
     <select name="userNames" id="userNames" #selecteduser>
         <option value=""></option>
-        <option value="0">Vikas Goyal</option>
-        <option value="1">Adam Sandler</option>
+        <option *ng-for="#user of users">{{user.name}}</option>
     </select>
     <button type="button" (click)="login(selecteduser.value)">Login</button>
 </div>
