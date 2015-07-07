@@ -4,6 +4,7 @@
 
 //Vendor exports
 export {Component, View, bootstrap} from '../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2';
+export {EventEmitter} from '../jspm_packages/npm/angular2@2.0.0-alpha.28/src/facade/async';
 export {Router, RouteParams, routerInjectables, RouteConfig, RouterOutlet} from 'jspm_packages/npm/angular2@2.0.0-alpha.28/router';
 export {NgFor} from '../jspm_packages/npm/angular2@2.0.0-alpha.28/directives';
 export {httpInjectables} from '../jspm_packages/npm/angular2@2.0.0-alpha.28/http';
