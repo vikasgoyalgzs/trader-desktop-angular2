@@ -43,6 +43,7 @@
     "directories": {},
     "dependencies": {
       "angular2": "npm:angular2@^2.0.0-alpha.28",
+      "moment": "github:moment/moment@^2.10.3",
       "process": "npm:process@^0.11.1",
       "reflect-metadata": "npm:reflect-metadata@^0.1.0",
       "zone.js": "npm:zone.js@^0.5.1"

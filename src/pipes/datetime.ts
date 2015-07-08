@@ -3,7 +3,7 @@
  */
 
 /// <reference path="../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
-import {Pipe} from 'typings/app.exports'
+import {Pipe} from 'typings/app.exports';
 
 export class DateTimePipe implements Pipe {
     supports(obj) {
@@ -15,8 +15,6 @@ export class DateTimePipe implements Pipe {
     }
 
     transform(value) {
-        let d = new Date(value);
-        let formattedDate = '';
-
+        return moment(value).format('MM/DD/YYYY hh:mm:ss A');
     }
 }

@@ -5,7 +5,18 @@
 /// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
 /// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/router.d.ts" />
 
-import {Component, View, bootstrap, httpInjectables, routerInjectables, RouteConfig, RouterOutlet} from 'typings/app.exports';
+import {
+    Component,
+    View,
+    bootstrap,
+    httpInjectables,
+    routerInjectables,
+    RouteConfig,
+    RouterOutlet,
+    NativeShadowDomStrategy,
+    ShadowDomStrategy,
+    bind
+} from 'typings/app.exports';
 import {Login} from '../login/login';
 import {Home} from '../home/home';
 
@@ -24,4 +35,4 @@ import {Home} from '../home/home';
 class AppComponent {
 }
 
-bootstrap(AppComponent, [routerInjectables, httpInjectables]);
+bootstrap(AppComponent, [routerInjectables, httpInjectables, bind(ShadowDomStrategy).toClass(NativeShadowDomStrategy)]);

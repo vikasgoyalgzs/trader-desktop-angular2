@@ -31,21 +31,12 @@ export class Modal {
     getFormValues ($event) {
         let target = $event.target;
         let modalElement = target;
-        while(modalElement.nodeName !== 'MODAL') {
-            modalElement = modalElement.parentNode;
+        while(!modalElement.classList.contains('modal')) {
+            modalElement = modalElement.parentElement;
         }
-        let scriptElement = modalElement.querySelector('script[type="ng/contentStart"]');
-        if (scriptElement) {
-            let injectedElements = [];
-            let nextElement = scriptElement.nextSibling;
-            while (nextElement.type !== 'ng/contentEnd') {
-                if (nextElement.nodeType !== 3) {
-                    injectedElements.push(nextElement);
-                }
-                nextElement = nextElement.nextSibling;
-            }
-            injectedElements.forEach(e => {this.collectValues(e)});
-        }
+        let contentElement = modalElement.querySelector('content');
+        let injectedElements = Array.prototype.slice.call(contentElement.getDistributedNodes(), 0);
+        injectedElements.forEach(e => {this.collectValues(e)});
     }
 
     collectValues (element) {

@@ -6,6 +6,7 @@
 import {Component, View, NgFor} from 'typings/app.exports';
 import {IOrder} from '../../models/order';
 import {Orders} from '../../services/orders';
+import {DateTimePipe} from '../../pipes/datetime';
 
 @Component({
     selector: 'grid',
