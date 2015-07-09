@@ -86,9 +86,7 @@ gulp.task('copyTsc', function () {
         .pipe(gulp.dest('node_modules/gulp-typescript/node_modules/typescript/bin/'));
 });
 
-gulp.task('install', function (callback) {
-    runSequence('copyTsc', 'clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch', callback);
-});
+gulp.task('install', ['copyTsc']);
 
 gulp.task('default', function (callback) {
     runSequence('clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch', callback);
