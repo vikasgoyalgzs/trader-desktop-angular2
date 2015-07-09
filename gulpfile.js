@@ -42,10 +42,12 @@ gulp.task('compile-ts', function () {
     var tsProject = tsc.createProject('tsconfig.json');
 
     var tsResult = gulp.src(sourceTsFiles)
+        .pipe(sourcemaps.init())
         .pipe(tsc(tsProject));
 
     return tsResult.js
-        .pipe(gulp.dest(config.tsOutputPath));
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('.'));
 });
 
 
@@ -53,7 +55,7 @@ gulp.task('compile-ts', function () {
  * Remove all generated JavaScript files from TypeScript compilation.
  */
 gulp.task('clean-ts', function (cb) {
-    var typeScriptGenFiles = [config.tsOutputPath,            // path to generated JS files
+    var typeScriptGenFiles = [
         config.source +'**/*.js',    // path to all JS files auto gen'd by editor
         config.source +'**/*.js.map' // path to all sourcemap files auto gen'd by editor
     ];
