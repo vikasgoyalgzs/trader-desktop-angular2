@@ -24,6 +24,7 @@ cd trader-desktop-angular2
 npm install
 jspm install
 gulp install
+gulp
 ```
 On a new terminal window, run the following command to start the server
 ```
