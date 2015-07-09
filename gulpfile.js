@@ -80,5 +80,11 @@ gulp.task('styles', function () {
         }))
         .pipe(gulp.dest('.'));
 });
+gulp.task('copyTsc', function () {
+    return gulp.src('Typescript/*.*')
+        .pipe(gulp.dest('node_modules/gulp-typescript/node_modules/typescript/bin/'));
+});
 
-gulp.task('default', ['compile-ts', 'gen-ts-refs', 'styles', 'watch']);
+gulp.task('install', ['copyTsc', 'clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch']);
+
+gulp.task('default', ['clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch']);
