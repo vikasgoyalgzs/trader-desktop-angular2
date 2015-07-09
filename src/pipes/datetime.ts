@@ -17,4 +17,8 @@ export class DateTimePipe implements Pipe {
     transform(value) {
         return moment(value).format('MM/DD/YYYY hh:mm:ss A');
     }
+
+    create () {
+        return this;
+    }
 }

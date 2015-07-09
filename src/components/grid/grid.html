@@ -14,15 +14,15 @@
   </th>
   <tr *ng-for="#order of orders">
     <td>{{order.id}}</td>
-    <td>{{order.creationTime}}</td>
+    <td>{{order.creationTime | datetime}}</td>
     <td>{{order.side}}</td>
     <td>{{order.symbol}}</td>
     <td>{{order.quantity}}</td>
-    <td>{{order.placed}}</td>
-    <td>{{order.executed}}</td>
+    <td>{{order.quantityPlaced}}</td>
+    <td>{{order.quantityExecuted}}</td>
     <td>{{order.limitPrice}}</td>
     <td>{{order.priority}}</td>
     <td>{{order.status}}</td>
-    <td>{{order.trader}}</td>
+    <td>{{order.traderId}}</td>
   </tr>
 </table>

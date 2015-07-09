@@ -13,12 +13,19 @@ import {
     routerInjectables,
     RouteConfig,
     RouterOutlet,
+    XHRConnection,
     NativeShadowDomStrategy,
     ShadowDomStrategy,
+    PipeRegistry,
     bind
 } from 'typings/app.exports';
+
+import {Http} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/http';
+import {BaseRequestOptions} from '../../../jspm_packages/npm/angular2@2.0.0-alpha.28/src/http/base_request_options';
+import {XHRJsonBackend} from '../../utils/xhr_json_backend';
 import {Login} from '../login/login';
 import {Home} from '../home/home';
+import {CustomPipes} from '../../pipes/customPipes';
 
 @Component({
     selector: 'my-app',
@@ -35,4 +42,13 @@ import {Home} from '../home/home';
 class AppComponent {
 }
 
-bootstrap(AppComponent, [routerInjectables, httpInjectables, bind(ShadowDomStrategy).toClass(NativeShadowDomStrategy)]);
+bootstrap(AppComponent, [
+    bind(Http).toFactory((backend, options) => {
+        return new Http(backend, options);
+    }, [XHRJsonBackend, BaseRequestOptions]),
+    routerInjectables,
+    httpInjectables,
+    bind(ShadowDomStrategy).toClass(NativeShadowDomStrategy),
+    bind(PipeRegistry).toValue(new PipeRegistry(CustomPipes))
+]);
+
