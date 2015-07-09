@@ -6,6 +6,7 @@ const watch = require('gulp-watch');
 const tsc = require('gulp-typescript');
 const inject = require('gulp-inject');
 const sourcemaps = require('gulp-sourcemaps');
+const runSequence = require('run-sequence');
 const Config = new require('./gulpfile.config');
 const config = new Config();
 
@@ -85,6 +86,10 @@ gulp.task('copyTsc', function () {
         .pipe(gulp.dest('node_modules/gulp-typescript/node_modules/typescript/bin/'));
 });
 
-gulp.task('install', ['copyTsc', 'clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch']);
+gulp.task('install', function (callback) {
+    runSequence('copyTsc', 'clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch', callback);
+});
 
-gulp.task('default', ['clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch']);
+gulp.task('default', function (callback) {
+    runSequence('clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch', callback);
+});
