@@ -7,7 +7,6 @@ src/**/*.css
 src/**/*.css.map
 typings/**/*.js
 typings/**/*.js.map
-TypeScript
 bower_components
 compiled
 dist
