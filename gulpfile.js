@@ -66,18 +66,19 @@ gulp.task('clean-ts', function (cb) {
 
 
 gulp.task('watch', function() {
-    gulp.watch([config.allTypeScript], ['ts-lint', 'compile-ts', 'gen-ts-refs']);
+    gulp.watch([config.allTypeScript], ['compile-ts', 'gen-ts-refs']);
+    gulp.watch([config.allSassFiles], ['styles']);
 });
 
 gulp.task('styles', function () {
-    return gulp.src('src/components/**/*.scss')
+    return gulp.src(config.allSassFiles)
         .pipe(compass({
             config_file: 'config.rb',
             debug: true,
             css: 'src/components',
             sass: 'src/components'
         }))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['ts-lint', 'compile-ts', 'gen-ts-refs', 'watch', 'styles']);
+gulp.task('default', ['compile-ts', 'gen-ts-refs', 'styles', 'watch']);
