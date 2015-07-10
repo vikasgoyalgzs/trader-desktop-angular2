@@ -2,12 +2,12 @@
  * Created by vgoya2 on 7/9/15.
  */
 
-import {ConnectionBackend, Connection} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/src/http/interfaces';
-import {ReadyStates, RequestMethods} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/src/http/enums';
-import {Request} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/src/http/static_request';
-import {Response} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/src/http/static_response';
-import {Inject, Injectable} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/di';
-import {BrowserXHR} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/src/http/backends/browser_xhr';
+import {ConnectionBackend, Connection} from '../../jspm_packages/npm/angular2/src/http/interfaces';
+import {ReadyStates, RequestMethods} from '../../jspm_packages/npm/angular2/src/http/enums';
+import {Request} from '../../jspm_packages/npm/angular2/src/http/static_request';
+import {Response} from '../../jspm_packages/npm/angular2/src/http/static_response';
+import {Inject, Injectable} from '../../jspm_packages/npm/angular2/di';
+import {BrowserXHR} from '../../jspm_packages/npm/angular2/src/http/backends/browser_xhr';
 import * as Rx from 'rx';
 
 export class XHRJsonConnection implements Connection {

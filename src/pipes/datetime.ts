@@ -2,7 +2,7 @@
  * Created by vgoya2 on 7/8/15.
  */
 
-/// <reference path="../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
+/// <reference path="../../jspm_packages/npm/angular2/angular2.d.ts" />
 import {Pipe} from 'typings/app.exports';
 
 export class DateTimePipe implements Pipe {

@@ -2,9 +2,9 @@
  * Created by vgoya2 on 6/26/15.
  */
 
-/// <reference path="../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
+/// <reference path="../../jspm_packages/npm/angular2/angular2.d.ts" />
 import {Inject} from 'typings/app.exports';
-import {Http} from '../../jspm_packages/npm/angular2@2.0.0-alpha.28/http';
+import {Http} from '../../jspm_packages/npm/angular2/http';
 
 export class Users {
     http: Http;

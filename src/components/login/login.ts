@@ -1,4 +1,4 @@
-/// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
+/// <reference path="../../../jspm_packages/npm/angular2/angular2.d.ts" />
 
 import {Component, View, Router, NgFor} from 'typings/app.exports';
 import {Users} from '../../services/users';
