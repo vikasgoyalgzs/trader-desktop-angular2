@@ -2,11 +2,11 @@ require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-http_path = "/"
-css_dir = "src/components"
-sass_dir = "src/components"
-images_dir = "images"
-javascripts_dir = "javascripts"
+http_path = "/trader-desktop-angular2/"
+css_dir = "src/components/"
+sass_dir = "src/components/"
+images_dir = "src/assets/"
+javascripts_dir = "src/"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

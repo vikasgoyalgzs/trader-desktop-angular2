@@ -10,23 +10,20 @@ Important notes:
 
 Instructions:
 
-Install these globally. "sudo only if you are on a mac/linux system"
+Install these globally. "use 'sudo' if you don't have admin rights on your machine"
 ```
 sudo npm install -g jspm
 sudo npm install -g gulp
 ```
 
-Install these locally. The last command 'gulp install' compiles typescript files into 
+Install these locally. The last command 'gulp' compiles typescript files into 
 javascript files and starts the watcher for typescript and compass.
 ```
 git clone https://github.com/vikasgoyalgzs/trader-desktop-angular2.git
 cd trader-desktop-angular2
-npm install
-jspm install
-gulp install
-gulp
+npm install && jspm install && gulp install && gulp
 ```
-On a new terminal window, run the following command to start the server
+In a new terminal window, run the following command to start the server
 ```
 npm start
 ```

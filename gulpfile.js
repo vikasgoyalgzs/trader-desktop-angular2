@@ -75,11 +75,10 @@ gulp.task('styles', function () {
     return gulp.src(config.allSassFiles)
         .pipe(compass({
             config_file: 'config.rb',
-            debug: true,
-            css: 'src/components',
-            sass: 'src/components'
-        }))
-        .pipe(gulp.dest('.'));
+            debug: false,
+            css: 'src/components/',
+            sass: 'src/components/'
+        }));
 });
 gulp.task('copyTsc', function () {
     return gulp.src('Typescript/*.*')
