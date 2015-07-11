@@ -20,7 +20,7 @@ Run the following commands to install these locally.
 ```
 git clone https://github.com/vikasgoyalgzs/trader-desktop-angular2.git
 cd trader-desktop-angular2
-npm install && jspm install && gulp install && gulp
+npm install && jspm install && gulp install
 ```
 
 After the install, you can start the watchers by running only the command given below.
