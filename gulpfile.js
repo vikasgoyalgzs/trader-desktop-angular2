@@ -9,6 +9,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const runSequence = require('run-sequence');
 const Config = new require('./gulpfile.config');
 const config = new Config();
+const fs = require('fs');
 
 gulp.task('gen-ts-refs', function () {
     var target = gulp.src(config.appTypeScriptReferences);
@@ -80,12 +81,24 @@ gulp.task('styles', function () {
             sass: 'src/components/'
         }));
 });
+
 gulp.task('copyTsc', function () {
     return gulp.src('Typescript/*.*')
         .pipe(gulp.dest('node_modules/gulp-typescript/node_modules/typescript/bin/'));
 });
 
-gulp.task('install', ['copyTsc']);
+gulp.task('renameAngular', function () {
+    var angularVersion = fs.readFileSync('package.json');
+    var parts = /"angular2": "npm:angular2@\^(.*?)",/.exec(angularVersion);
+    var angularFolderName = 'jspm_packages/npm/angular2@' + parts[1];
+    if (fs.existsSync(angularFolderName)) {
+        fs.renameSync(angularFolderName, 'jspm_packages/npm/angular2');
+    }
+    var config = fs.readFileSync('config.js', {encoding: 'utf8'});
+    fs.writeFileSync('config.js', config.replace(/"npm:angular2@.*?"/g, '"npm:angular2"'))
+});
+
+gulp.task('install', ['copyTsc', 'renameAngular']);
 
 gulp.task('default', function (callback) {
     runSequence('clean-ts', 'compile-ts', 'gen-ts-refs', 'styles', 'watch', callback);
