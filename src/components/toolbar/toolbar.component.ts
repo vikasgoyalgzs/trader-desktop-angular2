@@ -51,8 +51,7 @@ export class Toolbar {
     //TODO: Vikas - Move instruments to OrderFactory
     placeTrade (numberOfTrades) {
         for (let i = 0; i < parseInt(numberOfTrades); i++) {
-            this.orderRepo.insert(this.orderFactory.createRandomTrade(this.instrumentRepo.instruments))
-                .subscribe(res => console.log(res));
+            this.orderRepo.insert(this.orderFactory.createRandomTrade(this.instrumentRepo.instruments));
         }
         this.modalVisible = false;
     }
@@ -62,12 +61,10 @@ export class Toolbar {
     }
 
     deleteAll(): void {
-        this.orderRepo.deleteAll()
-            .subscribe(res => console.log(res));
+        this.orderRepo.deleteAll();
     }
 
     refresh(): void {
-        this.orderRepo.get()
-            .subscribe(res => console.log(res));
+        this.orderRepo.get();
     }
 }

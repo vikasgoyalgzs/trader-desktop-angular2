@@ -3,26 +3,31 @@
  */
 
 /// <reference path="../../jspm_packages/npm/angular2/angular2.d.ts" />
-import {Inject} from 'typings/app.exports';
+import {Inject, EventEmitter} from 'typings/app.exports';
 import {Http} from '../../jspm_packages/npm/angular2/http';
 import {IOrder} from '../interfaces/order';
 import {XHRJsonBackend} from '../utils/xhr_json_backend';
 import {IRepository} from '../interfaces/repository';
 
+let instance = null;
 export class OrderRepo implements IRepository<IOrder>{
     http: Http;
-    orders: Array<IOrder>;
+    orders: EventEmitter;
 
     constructor(@Inject(Http) _http) {
-        _http._backend = new XHRJsonBackend(window.XMLHttpRequest);
-        this.http = _http;
-        this.get()
-            .subscribe(orders => this.orders = orders);
+        if (!instance) {
+            instance = this;
+            _http._backend = new XHRJsonBackend(window.XMLHttpRequest);
+            this.http = _http;
+            this.orders = new EventEmitter();
+            this.get();
+        }
+        return instance;
     }
 
     insert (order: IOrder) {
         return this.http.post('/orders', JSON.stringify(order))
-            .map(res => res.json());
+            .subscribe(r => this.get());
     }
 
     remove (id: string) {
@@ -35,12 +40,13 @@ export class OrderRepo implements IRepository<IOrder>{
 
     get() {
         return this.http.get('/orders')
-            .map(res => res.json());
+            .map(res => res.json())
+            .subscribe(o => this.orders.next(o));
     }
 
     deleteAll() {
-        return this.http.delete('/orders');
+        return this.http.delete('/orders')
+            .subscribe(r => this.get());
     }
 }
-
 

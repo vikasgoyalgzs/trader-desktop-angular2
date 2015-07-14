@@ -12,7 +12,7 @@
     <td>Status</td>
     <td>Trader</td>
   </th>
-  <tr *ng-for="#order of orderRepo.orders">
+  <tr *ng-for="#order of orderRepo.orders | async">
     <td>{{order.id}}</td>
     <td>{{order.creationTime | datetime}}</td>
     <td>{{order.side}}</td>
