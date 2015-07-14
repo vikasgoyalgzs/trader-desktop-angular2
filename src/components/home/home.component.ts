@@ -2,9 +2,9 @@
 
 import {Component, View, Router, RouteParams} from 'typings/app.exports';
 
-import {LoggedinUser} from '../loggedInUser/loggedInUser';
-import {Toolbar} from '../toolbar/toolbar';
-import {Grid} from '../grid/grid';
+import {LoggedinUser} from '../loggedInUser/loggedInUser.component';
+import {Toolbar} from '../toolbar/toolbar.component';
+import {Grid} from '../grid/grid.component';
 import {IUser} from '../../models/user';
 
 @Component({

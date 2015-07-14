@@ -1,7 +1,7 @@
 /**
  * Created by vgoya2 on 7/6/15.
  */
-/// <reference path="../../../jspm_packages/npm/angular2@2.0.0-alpha.28/angular2.d.ts" />
+/// <reference path="../../../jspm_packages/npm/angular2/angular2.d.ts" />
 
 import {Component, View, NgFor} from 'typings/app.exports';
 

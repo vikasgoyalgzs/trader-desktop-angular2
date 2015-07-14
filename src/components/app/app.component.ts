@@ -23,8 +23,8 @@ import {
 import {Http} from '../../../jspm_packages/npm/angular2/http';
 import {BaseRequestOptions} from '../../../jspm_packages/npm/angular2/src/http/base_request_options';
 import {XHRJsonBackend} from '../../utils/xhr_json_backend';
-import {Login} from '../login/login';
-import {Home} from '../home/home';
+import {Login} from '../login/login.component';
+import {Home} from '../home/home.component';
 import {CustomPipes} from '../../pipes/customPipes';
 
 @Component({

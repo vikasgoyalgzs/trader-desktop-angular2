@@ -4,9 +4,9 @@
 /// <reference path="../../../jspm_packages/npm/angular2/angular2.d.ts" />
 
 import {Component, View} from 'typings/app.exports';
-import {Orders} from '../../services/orders';
-import {Instruments} from '../../services/instruments';
-import {Modal} from '../../controls/modal/modal';
+import {Orders} from '../../services/orders.repo';
+import {Instruments} from '../../services/instruments.repo';
+import {Modal} from '../../controls/modal/modal.component';
 import {IInstrument} from '../../models/instrument';
 
 @Component({

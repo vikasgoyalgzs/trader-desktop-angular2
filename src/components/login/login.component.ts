@@ -1,7 +1,7 @@
 /// <reference path="../../../jspm_packages/npm/angular2/angular2.d.ts" />
 
 import {Component, View, Router, NgFor} from 'typings/app.exports';
-import {Users} from '../../services/users';
+import {Users} from '../../services/users.repo';
 import {IUser} from '../../models/user';
 
 @Component({

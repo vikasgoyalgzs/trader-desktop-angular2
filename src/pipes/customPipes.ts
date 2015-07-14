@@ -4,7 +4,7 @@
 
 /// <reference path="../../jspm_packages/npm/angular2/angular2.d.ts" />
 import {Pipe, defaultPipes} from 'typings/app.exports';
-import {DateTimePipe} from './datetime';
+import {DateTimePipe} from './datetime.pipe';
 
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
