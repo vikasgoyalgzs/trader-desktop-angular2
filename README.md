@@ -7,10 +7,10 @@ Important notes:
 * This app is derived from https://github.com/archfirst/trader-desktop.git. Please refer 
   to the given link for details on domain model and the server.
 * The idea is use as many angular modules as possible. So far the following modules/features have been use
-  [1]: router
-  [2]: change detection using observable
-  [3]: http
-  [4]: pipes
+  - router
+  - change detection using observable
+  - http
+  - pipes
 * This is still a work in progress. Styles and some of the functionality is still pending.
 
 Instructions:
