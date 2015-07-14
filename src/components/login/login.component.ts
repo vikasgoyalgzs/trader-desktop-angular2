@@ -1,12 +1,12 @@
 /// <reference path="../../../jspm_packages/npm/angular2/angular2.d.ts" />
 
 import {Component, View, Router, NgFor} from 'typings/app.exports';
-import {Users} from '../../services/users.repo';
-import {IUser} from '../../models/user';
+import {UserRepo} from '../../services/user.repo';
+import {IUser} from '../../interfaces/user';
 
 @Component({
     selector: 'login',
-    appInjector: [Users]
+    appInjector: [UserRepo]
 })
 @View({
     templateUrl: 'src/components/login/login.html',
@@ -15,12 +15,9 @@ import {IUser} from '../../models/user';
 })
 export class Login {
     router: Router;
-    users: Array<IUser>;
 
-    constructor(r: Router, userSvc: Users) {
+    constructor(r: Router, public userRepo: UserRepo) {
         this.router = r.parent;
-        userSvc.get()
-            .subscribe(users => this.users = users);
     }
 
     login(username): void {

@@ -4,29 +4,26 @@
 /// <reference path="../../../jspm_packages/npm/angular2/angular2.d.ts" />
 
 import {Component, View} from 'typings/app.exports';
-import {Orders} from '../../services/orders.repo';
-import {Instruments} from '../../services/instruments.repo';
+import {OrderRepo} from '../../services/order.repo';
+import {OrderFactory} from '../../services/order.factory';
+import {InstrumentRepo} from '../../services/instrument.repo';
 import {Modal} from '../../controls/modal/modal.component';
-import {IInstrument} from '../../models/instrument';
 
 @Component({
     selector: 'toolbar',
-    appInjector: [Orders, Instruments]
+    appInjector: [OrderRepo, OrderFactory, InstrumentRepo]
 })
 @View({
     templateUrl: 'src/components/toolbar/toolbar.html',
     directives: [Modal]
 })
 export class Toolbar {
-    instruments: Array<string>;
-    ordersSvc: Orders;
     modalVisible: boolean;
     numberOfTrades: number;
 
-    constructor (ordersSvc: Orders, instrumentsSvc: Instruments) {
-        this.ordersSvc = ordersSvc;
-        instrumentsSvc.get()
-            .subscribe(instruments => this.instruments = instruments.map(i => i.symbol));
+    constructor (public orderRepo: OrderRepo,
+                 public orderFactory: OrderFactory,
+                 public instrumentRepo: InstrumentRepo) {
     }
 
     getModalButtons () {
@@ -51,10 +48,10 @@ export class Toolbar {
         }.bind(this);
     }
 
-
+    //TODO: Vikas - Move instruments to OrderFactory
     placeTrade (numberOfTrades) {
         for (let i = 0; i < parseInt(numberOfTrades); i++) {
-            this.ordersSvc.create(this.createRandomTrade())
+            this.orderRepo.insert(this.orderFactory.createRandomTrade(this.instrumentRepo.instruments))
                 .subscribe(res => console.log(res));
         }
         this.modalVisible = false;
@@ -65,24 +62,12 @@ export class Toolbar {
     }
 
     deleteAll(): void {
-        this.ordersSvc.deleteAll()
+        this.orderRepo.deleteAll()
             .subscribe(res => console.log(res));
     }
 
     refresh(): void {
-        this.ordersSvc.get()
+        this.orderRepo.get()
             .subscribe(res => console.log(res));
-    }
-
-    createRandomTrade () {
-        let sideOptions = ["Buy", "Sell"];
-
-        return {
-            side: sideOptions[Math.floor(Math.random() * sideOptions.length)],
-            symbol: this.instruments[Math.floor(Math.random() * this.instruments.length)],
-            quantity: parseInt(Math.random() * 4000 + 1),
-            limitPrice: parseFloat((Math.random() * 4000 + 1).toFixed(2)),
-            traderId: "AM"
-        }
     }
 }

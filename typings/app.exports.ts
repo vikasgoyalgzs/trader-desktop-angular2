@@ -16,20 +16,22 @@ export {XHRConnection} from '../jspm_packages/npm/angular2/src/http/backends/xhr
 //Vendor exports - end
 
 //App exports
-/// <reference path="../src/models/instrument.ts" />
-/// <reference path="../src/models/order.ts" />
-/// <reference path="../src/models/user.ts" />
+/// <reference path="../src/interfaces/instrument.ts" />
+/// <reference path="../src/interfaces/order.ts" />
+/// <reference path="../src/interfaces/repository.ts" />
+/// <reference path="../src/interfaces/user.ts" />
 /// <reference path="../src/pipes/customPipes.ts" />
-/// <reference path="../src/pipes/datetime.ts" />
-/// <reference path="../src/services/Instruments.ts" />
-/// <reference path="../src/services/Users.ts" />
-/// <reference path="../src/services/orders.ts" />
+/// <reference path="../src/pipes/datetime.pipe.ts" />
+/// <reference path="../src/services/Instrument.repo.ts" />
+/// <reference path="../src/services/order.factory.ts" />
+/// <reference path="../src/services/order.repo.ts" />
+/// <reference path="../src/services/user.repo.ts" />
 /// <reference path="../src/utils/xhr_json_backend.ts" />
-/// <reference path="../src/components/app/app.ts" />
-/// <reference path="../src/components/grid/grid.ts" />
-/// <reference path="../src/components/home/home.ts" />
-/// <reference path="../src/components/loggedInUser/loggedInUser.ts" />
-/// <reference path="../src/components/login/login.ts" />
-/// <reference path="../src/components/toolbar/toolbar.ts" />
-/// <reference path="../src/controls/modal/modal.ts" />
+/// <reference path="../src/components/loggedInUser/loggedInUser.component.ts" />
+/// <reference path="../src/components/login/login.component.ts" />
+/// <reference path="../src/components/toolbar/toolbar.component.ts" />
+/// <reference path="../src/components/app/app.component.ts" />
+/// <reference path="../src/components/grid/grid.component.ts" />
+/// <reference path="../src/components/home/home.component.ts" />
+/// <reference path="../src/controls/modal/modal.component.ts" />
 //App exports - end
