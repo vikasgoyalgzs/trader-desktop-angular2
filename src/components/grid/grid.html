@@ -1,28 +1,28 @@
 <table>
-  <th>
-    <td>Id</td>
-    <td>Creation Time</td>
-    <td>Side</td>
-    <td>Symbol</td>
-    <td>Quantity</td>
-    <td>Placed</td>
-    <td>Executed</td>
-    <td>Limit Price</td>
-    <td>Priority</td>
-    <td>Status</td>
-    <td>Trader</td>
-  </th>
-  <tr *ng-for="#order of orderRepo.orders | async">
-    <td>{{order.id}}</td>
-    <td>{{order.creationTime | datetime}}</td>
-    <td>{{order.side}}</td>
-    <td>{{order.symbol}}</td>
-    <td>{{order.quantity}}</td>
-    <td>{{order.quantityPlaced}}</td>
-    <td>{{order.quantityExecuted}}</td>
-    <td>{{order.limitPrice}}</td>
-    <td>{{order.priority}}</td>
-    <td>{{order.status}}</td>
-    <td>{{order.traderId}}</td>
-  </tr>
+    <tr>
+        <th>Id</th>
+        <th>Creation Time</th>
+        <th>Side</th>
+        <th>Symbol</th>
+        <th>Quantity</th>
+        <th>Placed</th>
+        <th>Executed</th>
+        <th>Limit Price</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Trader</th>
+    </tr>
+    <tr *ng-for="#order of orderRepo.orders | async">
+        <td class="order-id right-align">{{order.id}}</td>
+        <td class="order-creationTime left-align">{{order.creationTime | datetime}}</td>
+        <td class="order-side left-align">{{order.side}}</td>
+        <td class="order-symbol left-align">{{order.symbol}}</td>
+        <td class="order-quantity right-align">{{order.quantity}}</td>
+        <td class="order-quantityPlaced right-align">{{order.quantityPlaced}}</td>
+        <td class="order-quantityExecuted right-align">{{order.quantityExecuted}}</td>
+        <td class="order-limitPrice right-align">{{order.limitPrice}}</td>
+        <td class="order-priority right-align">{{order.priority}}</td>
+        <td class="order-status left-align">{{order.status}}</td>
+        <td class="order-traderid center-align">{{order.traderId}}</td>
+    </tr>
 </table>

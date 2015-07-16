@@ -33,6 +33,7 @@ import {CustomPipes} from '../../pipes/customPipes';
 })
 @View({
     templateUrl: 'src/components/app/app.html',
+    styleUrls: ['src/components/app/app.css'],
     directives: [RouterOutlet]
 })
 @RouteConfig([

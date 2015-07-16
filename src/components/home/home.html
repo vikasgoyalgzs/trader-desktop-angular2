@@ -1,9 +1,13 @@
 <div class="home-component">
-    <div>
-        <span class="title left">Trader Desktop</span>
-        <loggedin-user class="right" [user]="loggedInUser"></loggedin-user>
+    <div class="l-header">
+        <div>
+            <span class="title left">Trader Desktop</span>
+            <loggedin-user class="right" [user]="loggedInUser"></loggedin-user>
+        </div>
     </div>
     <toolbar></toolbar>
-    <grid></grid>
+    <div class="l-content">
+        <grid></grid>
+    </div>
 </div>
 

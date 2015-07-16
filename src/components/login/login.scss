@@ -1,5 +1,17 @@
 .login-component {
+    width: 200px;
+    border: 1px solid #000;
+    padding: 10px;
+    position: absolute;
+    top: 30%;
+    left: 40%;
     select {
         display: block;
+        margin-bottom: 10px;
+    }
+
+    .login-title {
+        font-size: 15px;
+        margin-bottom: 5px;
     }
 }

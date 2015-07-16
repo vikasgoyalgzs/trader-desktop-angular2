@@ -3,24 +3,31 @@
  */
 /// <reference path="../../../jspm_packages/npm/angular2/angular2.d.ts" />
 
-import {Component, View, NgFor} from 'typings/app.exports';
+import {Component, View, NgFor, CSSClass} from 'typings/app.exports';
 
 @Component({
     selector: 'modal',
-    properties: ['title', 'buttons', 'hidden', 'callback']
+    properties: ['title', 'buttons', 'visible', 'callback']
 })
 @View({
-    templateUrl: 'src/controls/modal/modal.html',
-    directives: [NgFor]
+    templateUrl: 'src/components/modal/modal.html',
+    styleUrls: ['src/components/modal/modal.css'],
+    directives: [NgFor, CSSClass]
 })
 export class Modal {
     title: string;
     buttons: string;
     callback: Function;
     values: Object;
+    classObject: Object;
 
     constructor () {
         this.values = {};
+        this.classObject = {'modal': true, 'visible': false};
+    }
+
+    set visible (val) {
+        this.classObject['visible'] = val;
     }
 
     onButtonClick ($event, clickedButton) {

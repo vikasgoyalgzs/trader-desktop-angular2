@@ -1,0 +1,19 @@
+th {
+    padding: 2px 10px;
+}
+td {
+    padding: 2px 10px;
+
+    &.left-align {
+        text-align: left;
+    }
+
+    &.right-align {
+        text-align: right;
+    }
+
+    &.center-align {
+        text-align: right;
+    }
+}
+

@@ -1,9 +1,13 @@
 <div class="login-component">
-    <h3>Log In</h3>
-    <select name="userNames" id="userNames" #selecteduser>
-        <option value=""></option>
-        <option *ng-for="#user of userRepo.users">{{user.name}}</option>
-    </select>
-    <button type="button" (click)="login(selecteduser.value)">Login</button>
+    <div class="login-title">
+        Log In
+    </div>
+    <div class="login-content">
+        <select name="userNames" id="userNames" #selecteduser>
+            <option value=""></option>
+            <option *ng-for="#user of userRepo.users">{{user.name}}</option>
+        </select>
+        <button type="button" (click)="login(selecteduser.value)">Login</button>
+    </div>
 </div>
 

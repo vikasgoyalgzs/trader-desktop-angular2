@@ -1,20 +1,24 @@
-<div>
-  <div class="left">
-    <button (click)="trade()">Trade</button>
+<div class="l-toolbar">
+  <div class="btnBar left">
+    <button class="" (click)="trade()">Trade</button>
     <button  (click)="deleteAll()">Delete All</button>
     <button (click)="refresh()">Refresh</button>
   </div>
 
   <div class="right">
-    <button></button>
-    <button></button>
+      <input type="radio" name="view-toggle" value="table" checked/>
+      <label>Table</label>
+      <input type="radio" name="view-toggle" value="chart"/>
+      <label>Chart</label>
+      <!--<img src="/src/assets/table.png" class="table-view-toggle view-toggle"></img>-->
+    <!--<span class="chart-view-toggle view-toggle"></span>-->
   </div>
 </div>
 <modal
     title="Create Multiple Trades"
     [buttons]="getModalButtons()"
     [callback]="getModalCallback()"
-    [hidden]="!modalVisible">
+    [visible]="modalVisible">
     <div>
         <label for="numberOfTrades">Enter number of trades</label>
         <input #numtrades type="text" name="numberOfTrades" id="numberOfTrades"/>

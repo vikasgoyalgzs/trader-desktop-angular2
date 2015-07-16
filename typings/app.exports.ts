@@ -3,7 +3,7 @@
  */
 
 //Vendor exports
-export {Component, View, bootstrap} from '../jspm_packages/npm/angular2/angular2';
+export {Component, View, bootstrap, CSSClass} from '../jspm_packages/npm/angular2/angular2';
 export {EventEmitter} from '../jspm_packages/npm/angular2/src/facade/async';
 export {PipeRegistry, Pipe, defaultPipes} from '../jspm_packages/npm/angular2/change_detection';
 export {ShadowDomStrategy, NativeShadowDomStrategy} from '../jspm_packages/npm/angular2/render';

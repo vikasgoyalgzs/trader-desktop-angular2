@@ -14,6 +14,7 @@ import {DateTimePipe} from '../../pipes/datetime.pipe';
 })
 @View({
     templateUrl: 'src/components/grid/grid.html',
+    styleUrls: ['src/components/grid/grid.css'],
     directives: [NgFor]
 })
 export class Grid {

@@ -15,6 +15,7 @@ System.config({
 System.config({
   "map": {
     "angular2": "npm:angular2@2.0.0-alpha.28",
+    "bootstrap": "github:twbs/bootstrap@3.3.5",
     "gulp": "npm:gulp@3.9.0",
     "gulp-compass": "npm:gulp-compass@2.1.0",
     "lodash": "npm:lodash@3.10.0",
@@ -80,6 +81,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:twbs/bootstrap@3.3.5": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:angular2@2.0.0-alpha.28": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",

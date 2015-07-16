@@ -1,0 +1,32 @@
+.l-toolbar {
+    display: block;
+    margin-bottom: 10px;
+    .btnBar {
+        button {
+            width: 90px;
+            height: 25px;
+            cursor: pointer;
+        }
+    }
+
+    &:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .view-toggle {
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .table-view-toggle {
+        //background-image: url("/src/assets/table.png");
+    }
+
+    .chart-view-toggle {
+        //background-image: url("/src/assets/chart.png");
+    }
+}

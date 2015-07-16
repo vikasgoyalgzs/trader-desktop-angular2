@@ -7,7 +7,7 @@ import {Component, View} from 'typings/app.exports';
 import {OrderRepo} from '../../services/order.repo';
 import {OrderFactory} from '../../services/order.factory';
 import {InstrumentRepo} from '../../services/instrument.repo';
-import {Modal} from '../../controls/modal/modal.component';
+import {Modal} from '../modal/modal.component';
 
 @Component({
     selector: 'toolbar',
@@ -15,6 +15,7 @@ import {Modal} from '../../controls/modal/modal.component';
 })
 @View({
     templateUrl: 'src/components/toolbar/toolbar.html',
+    styleUrls: ['src/components/toolbar/toolbar.css'],
     directives: [Modal]
 })
 export class Toolbar {
@@ -45,6 +46,7 @@ export class Toolbar {
                 default:
                     break;
             }
+            this.modalVisible = false;
         }.bind(this);
     }
 
@@ -53,7 +55,6 @@ export class Toolbar {
         for (let i = 0; i < parseInt(numberOfTrades); i++) {
             this.orderRepo.insert(this.orderFactory.createRandomTrade(this.instrumentRepo.instruments));
         }
-        this.modalVisible = false;
     }
 
     trade(): void {

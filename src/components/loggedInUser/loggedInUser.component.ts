@@ -10,7 +10,8 @@ import {Component, View, Router} from 'typings/app.exports';
     properties: ['user']
 })
 @View({
-    templateUrl: 'src/components/loggedInUser/loggedInUser.html'
+    templateUrl: 'src/components/loggedInUser/loggedInUser.html',
+    styleUrls: ['src/components/loggedInUser/loggedInUser.css']
 })
 export class LoggedinUser {
     router: Router;
