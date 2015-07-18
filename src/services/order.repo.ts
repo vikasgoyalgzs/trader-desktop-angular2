@@ -48,5 +48,10 @@ export class OrderRepo implements IRepository<IOrder>{
         return this.http.delete('/orders')
             .subscribe(r => this.get());
     }
+
+    getOrdersEmitter () {
+        return this.orders;
+    }
+
 }
 

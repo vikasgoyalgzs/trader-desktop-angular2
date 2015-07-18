@@ -3,8 +3,8 @@
  */
 
 //Vendor exports
-export {Component, View, bootstrap, CSSClass} from '../jspm_packages/npm/angular2/angular2';
-export {EventEmitter} from '../jspm_packages/npm/angular2/src/facade/async';
+export {Component, View, Directive, bootstrap, CSSClass, ViewContainerRef, ProtoViewRef} from '../jspm_packages/npm/angular2/angular2';
+export {EventEmitter, ObservableWrapper} from '../jspm_packages/npm/angular2/src/facade/async';
 export {PipeRegistry, Pipe, defaultPipes} from '../jspm_packages/npm/angular2/change_detection';
 export {ShadowDomStrategy, NativeShadowDomStrategy} from '../jspm_packages/npm/angular2/render';
 export {Router, RouteParams, routerInjectables, RouteConfig, RouterOutlet} from 'jspm_packages/npm/angular2/router';

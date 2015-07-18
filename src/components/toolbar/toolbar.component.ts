@@ -8,10 +8,11 @@ import {OrderRepo} from '../../services/order.repo';
 import {OrderFactory} from '../../services/order.factory';
 import {InstrumentRepo} from '../../services/instrument.repo';
 import {Modal} from '../modal/modal.component';
+import {ViewSettings} from '../../services/viewsettings.service';
 
 @Component({
     selector: 'toolbar',
-    appInjector: [OrderRepo, OrderFactory, InstrumentRepo]
+    appInjector: [OrderRepo, OrderFactory, InstrumentRepo, ViewSettings]
 })
 @View({
     templateUrl: 'src/components/toolbar/toolbar.html',
@@ -21,10 +22,12 @@ import {Modal} from '../modal/modal.component';
 export class Toolbar {
     modalVisible: boolean;
     numberOfTrades: number;
+    selectedView: string = "table";
 
     constructor (public orderRepo: OrderRepo,
                  public orderFactory: OrderFactory,
-                 public instrumentRepo: InstrumentRepo) {
+                 public instrumentRepo: InstrumentRepo,
+                 public viewSettings: ViewSettings) {
     }
 
     getModalButtons () {
@@ -67,5 +70,11 @@ export class Toolbar {
 
     refresh(): void {
         this.orderRepo.get();
+    }
+
+    onViewToggle (view) {
+        //TODO: Vikas: Temporary code: Will be replaced with a better communication pattern
+        // if it is available in Angular2
+        this.viewSettings.settingsObservable.onNext({key: "viewMode", value: view});
     }
 }
