@@ -22,15 +22,13 @@ Install these globally. "use 'sudo' if you don't have admin rights on your machi
 ```
 sudo npm install -g jspm
 sudo npm install -g gulp
-sudo npm install -g bower
-git config --global url."https://".insteadOf git://
 ```
 
 Run the following commands to install these locally. 
 ```
 git clone https://github.com/vikasgoyalgzs/trader-desktop-angular2.git
 cd trader-desktop-angular2
-npm install && jspm install && gulp install && bower install
+npm install && jspm install && gulp install
 ```
 
 After the install, you can start the watchers by running only the command given below.

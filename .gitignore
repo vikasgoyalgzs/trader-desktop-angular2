@@ -7,7 +7,6 @@ src/**/*.css
 src/**/*.css.map
 typings/**/*.js
 typings/**/*.js.map
-bower_components
 compiled
 dist
 sauce_connect.log

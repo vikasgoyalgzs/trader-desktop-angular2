@@ -30,7 +30,7 @@ export class Modal {
         this.classObject['visible'] = val;
     }
 
-    onButtonClick ($event, clickedButton) {
+    onModalButtonClick ($event, clickedButton) {
         this.getFormValues($event);
         this.callback(clickedButton, this.values);
     }
@@ -56,7 +56,7 @@ export class Modal {
                 }
             }
         } else {
-            this.values[element.name] = element.value;
+            this.values[element.name] = element.value;`                                                                                             `
         }
     }
 }

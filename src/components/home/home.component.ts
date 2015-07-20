@@ -20,7 +20,7 @@ import {ViewSettings} from '../../services/viewsettings.service';
 })
 export class Home {
     loggedInUser: IUser;
-    view: string;
+    view: string = 'table';
 
     constructor(routeParams: RouteParams, public viewSettings: ViewSettings) {
         this.loggedInUser = routeParams.params.username;

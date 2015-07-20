@@ -29,7 +29,7 @@ export class Chart {
             },
             plotOptions: {
                 series: {
-                    stacking: 'normal'
+                    stacking: 'percent'
                 }
             },
             legend: {
@@ -51,18 +51,19 @@ export class Chart {
             let placed = [];
             let executed = [];
             let total = [];
-            orders.forEach(function (order) {
-                placed.push(order.quantityPlaced);
-                executed.push(order.quantityExecuted);
-                total.push(order.quantity);
-            });
-            this.formatData(placed, executed, total);
+            if (orders.length) {
+                orders.forEach(function (order) {
+                    placed.push(order.quantityPlaced);
+                    executed.push(order.quantityExecuted);
+                    total.push(order.quantity);
+                });
+                this.formatData(placed, executed, total);
+            }
         });
     }
 
     formatData(placed, executed, total) {
         let xAxis = [{
-            // Primary yAxis
             labels: {
                 format: '{value}',
                 style: {
@@ -77,7 +78,7 @@ export class Chart {
             },
             opposite: true
 
-        }, { // Secondary yAxis
+        }, {
             gridLineWidth: 0,
             title: {
                 text: 'Order Id',
