@@ -7,7 +7,8 @@
     </div>
     <toolbar></toolbar>
     <div class="l-content">
-        <grid></grid>
+        <grid [hidden]="view === 'chart'"></grid>
+        <chart [hidden]="view === 'table'"></chart>
     </div>
 </div>
 

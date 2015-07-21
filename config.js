@@ -8,7 +8,10 @@ System.config({
     "rx": "jspm_packages/npm/rx@2.5.1/dist/rx.js",
     "process": "jspm_packages/npm/process@0.10.1.js",
     "moment": "jspm_packages/github/moment/moment@2.10.3.js",
-    "lodash": "jspm_packages/npm/lodash@1.0.2/dist/lodash.js"
+    "lodash": "jspm_packages/npm/lodash@1.0.2/dist/lodash.js",
+    "immutable": "jspm_packages/npm/immutable@3.7.4/dist/immutable.min.js",
+    "chartsAdapter": "bower_components/highcharts-release/adapters/standalone-framework.src.js",
+    "charts": "bower_components/highcharts-release/highcharts.src.js"
   }
 });
 
@@ -18,6 +21,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.5",
     "gulp": "npm:gulp@3.9.0",
     "gulp-compass": "npm:gulp-compass@2.1.0",
+    "immutable": "npm:immutable@3.7.4",
     "lodash": "npm:lodash@3.10.0",
     "moment": "github:moment/moment@2.10.3",
     "process": "npm:process@0.11.1",

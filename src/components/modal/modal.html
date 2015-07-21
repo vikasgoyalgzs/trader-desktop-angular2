@@ -8,7 +8,7 @@
             <content></content>
         </div>
         <div class="modal-footer">
-            <button type="button" *ng-for="#button of buttons" (click)="onButtonClick($event, button.title)">{{button.title}}</button>
+            <button type="button" *ng-for="#button of buttons" (click)="onModalButtonClick($event, button.title)">{{button.title}}</button>
         </div>
     </div>
 </div>

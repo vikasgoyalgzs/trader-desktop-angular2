@@ -6,9 +6,9 @@
   </div>
 
   <div class="right">
-      <input type="radio" name="view-toggle" value="table" checked/>
+      <input type="radio" name="view-toggle" value="table" [checked]="selectedView === 'table'" (change)="onViewToggle('table')"/>
       <label>Table</label>
-      <input type="radio" name="view-toggle" value="chart"/>
+      <input type="radio" name="view-toggle" value="chart" [checked]="selectedView === 'chart'" (change)="onViewToggle('chart')"/>
       <label>Chart</label>
       <!--<img src="/src/assets/table.png" class="table-view-toggle view-toggle"></img>-->
     <!--<span class="chart-view-toggle view-toggle"></span>-->
